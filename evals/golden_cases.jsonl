@@ -1,0 +1,5 @@
+{"name":"read-only-allows-read","risk_tier":"read_only","action":"read","payload":{"query":"status"},"expected":{"allowed":true,"requires_review":false}}
+{"name":"read-only-blocks-draft","risk_tier":"read_only","action":"draft","payload":{"body":"summary"},"expected":{"allowed":false,"requires_review":false}}
+{"name":"approved-tier-requires-human","risk_tier":"human_approved","action":"draft","payload":{"body":"proposed update"},"expected":{"allowed":true,"requires_review":true}}
+{"name":"commitment-field-is-impossible","risk_tier":"human_approved","action":"draft","payload":{"owner":"someone","body":"proposed update"},"expected":{"allowed":false,"requires_review":false}}
+{"name":"ungranted-action-is-denied","risk_tier":"draft","action":"send","payload":{"body":"hello"},"expected":{"allowed":false,"requires_review":false}}
